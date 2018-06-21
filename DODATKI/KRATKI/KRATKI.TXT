@@ -1,0 +1,15 @@
+KRATKI PROGRAMI
+
+V tem direktoriju se nahajajo relativno trivialni programi, ki ne potrebujejo 
+posebne razlae:
+
+   SIEVE.cpp      - Program za iskanje praštevil.
+   EVKLID.cpp     - Evklidov algoritem iskanja najveèjega skupnega deljitelja.
+   WC.cpp      - Štetje besed...
+
+
+                                                Matjaž Prtenjak
+
+
+
+

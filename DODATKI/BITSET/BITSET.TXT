@@ -1,0 +1,23 @@
+BITSET
+
+   Paskalovci, nam veèkrat oèitajo, da C/C++ nima podpore za delo z bitnimi 
+nizi. Ob tem se radi pohvalijo, da Pascal to podporo že dolgo ima.
+
+   Ker pa je C++ resnièno zelo fleksibilen, si to podporo napišimo sami. Ideja 
+je preprosta. Potrebujemo razred, ki bo hranil polje bitov in njihovo dolžino.
+Problem pa je v tem, da je najmanjši naslovljivi del spomina bajt, ki 
+predstavlja 8 bitov. V razredu moramo torej imeti polje znakov (char).
+
+   Odvisno od raèunalnika, pa tip char zasede (vsaj) 8 bitov. To pomeni, da
+bomo morali vsak bit zapakirati v veèjo celoto - char. V programski kodi 
+zato malo plešemo po spominu in ...
+
+   Zaradi operatorja << program ni popolnoma prenosljiv. Na nekaterih tipih
+raèunalnikov, se lahko pojavijo problemi. V tem primeru popravite stvari
+(PS. Saj jih ni veliko.)
+
+   Program ni popolnoma moje delo, temveè ga je pred nekaj leti napisal 
+g. Scott Robert Ladd, sam pa sem ga samo malce popravil, a se žal ne 
+spominjam veè kje.
+
+                                                   Matjaž Prtenjak

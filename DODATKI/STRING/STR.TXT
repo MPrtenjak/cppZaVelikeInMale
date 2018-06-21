@@ -1,0 +1,32 @@
+STRING
+
+   C++ nima podpore za delo z nizi znakov. Niz znakov obravnava kot polje èrk
+in zato nad nizi (stringi) ne zna izvajati siceršnjih matematiènih in logiènih
+operacij. 
+
+   Kot marsikaj drugega se da tudi to preprosto popraviti. Naredimo razred, ki
+hrani niz znakov in nad njim izpeljemo vse željene operacije. Pred vami je
+razred, ki dela ravno to. 
+
+   Kot boste videli je v njem nekaj angeških komentarjev, za kar se vam 
+opravièujem. Ta razred sem razvijal že nekoè davno in navado imam, da komentiram
+v (bolj popaèeni) anglešèini. Ob tem boste videli tudi nekaj programskih 
+prijemov, ki danes niso veè potrebni (upravljanje z napakami...).
+
+   Zanimivo pri razredu pa je to, da vedno rezervira veè prostora, kot ga nujno
+potrebuje. Razlog je preprost. Èe bi vedno imeli ravno dovolj prostora, bi 
+morali za vsako novo èrko rezervirati nov prostor, prepisati celoten niz,
+sprostiti star prostor... S tem, ko rezerviramo veèji prostor, pa poskrbimo
+za to, da spomin ni preveè razdrobljen. Prostor pominimo dokler ga ne zmanjka,
+v tem trenutku dodamo še nov (veèji) kos in tako dalje...
+
+   Trenutno poveèuje velikost nizov s korakom po 8 (AllocIncr = Alloc Increment)
+Po potrebi lahko to konstanto poveèajte ali pomanjšate, paè odvisno od 
+konkretne aplikacije. Zavedajte pa se, da bo to veljalo za vse nize te 
+aplikacije!
+
+   Program ni popolnoma moje delo, temveè ga je pred nekaj leti napisal 
+g. Scott Robert Ladd, sam pa sem ga samo malce popravil, a se žal ne 
+spominjam veè kje.
+
+                                                   Matjaž Prtenjak

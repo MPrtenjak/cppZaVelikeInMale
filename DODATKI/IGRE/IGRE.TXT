@@ -1,0 +1,18 @@
+IGRE
+
+V tem direktoriju se nahajajo nekatere preproste miselne igre. Ker mnoge
+igre zahtevajo tudi upravljanje z zaslonom, se v direktoriju nahaja  
+zaglevje zaslon.hpp. 
+
+To zaglevje je implementirano s pomoèjo tki. ANSI sekvenc in zato mora vaš 
+zaslon (terminal) podpirati te sekvence, da bodo igre delovale. Na nekaterih
+sistemih je zato potrebno prej naloziti kakšen ANSI gonilnik (ansi.sys ali 
+kaj podobnega).
+
+Kljub temu, da naj bi bile te sekvence standardne, pa se jih vsi proizvajalci 
+ne držijo povsem, zato boste (morda) morali na nekaterih operacijskih 
+sistemih katero izmed funkcij tudi spremeniti.
+
+
+
+                  Matjaž Prtenjak

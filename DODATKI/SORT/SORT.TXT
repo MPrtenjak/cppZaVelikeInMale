@@ -1,0 +1,27 @@
+SORTIRANJE
+
+V tem direktoriju se nahaja nekaj algoritmov, ki so namenjeni izkljulèno
+sortiranju. Predstavljajo klasiène sortirne algoritme, ki so v programiranju
+že dolgo znani.
+
+Vsi sortirni algoritmi se delijo na dve veliki množici:
+   - interni in
+   - eksterni.
+Pod internimi so mišljeni tisti, pri katerih se vsi podatki, ki jih je potrebno
+sortirati, nahajajo v spominu raèunalnika. Eksterni pa so tisti, pri katerih
+se podatki, ki jih sortirajo, nahajajo v datotekah.
+
+Naj vas ne moti dejstvo, da so pri vseh algoritmih vhodni podatki zapisani v
+datotekah. Algoritmi iz prve skupina namreè vse podatke najprej preberejo v
+spomin in jih nato sortirajo! S tem je namreè lažje delati, saj za lahko za
+poskuse napišete datoteko, ki jo potem vedno uporabljate. V nasprotnem primeru,
+pa bi morali podatke vedno znova vpisovati.
+
+Zaradi preglednosti vsi algoritmi operirajo z celimi števili. Èe želite
+pa jih boste zelo preprosto spremenili tako, da bodo delovali tudi z
+drugimi podatki. C++ seveda omogoèa povsem splošne algoritme (s pomoèjo
+kalupov), vendar pa je namen teh primerov predvsem v pouènosti in ne v
+splošnosti in prfekcionizmu.
+
+
+                                 Matjaž Prtenjak

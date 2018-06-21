@@ -1,0 +1,47 @@
+CALC
+
+
+To je zelo preprost skladovni kalkulator. Ker je njegov namen samo nakazati
+rešitve, pozna malo funkcij. Razen osnovnih raèunskih operacij, pozna še sin,
+cos in število PI. Program se konèa, ko napišemo 'exit'.
+
+
+ZGRADBA
+
+
+Na zaèetku definiramo dve konstanti, ki nam služita kot meji sklada in vnosne
+vrstice. Kar so v vsakem programu mogoèe napake definiramo razred napak, ki
+zna napako tudi izpisati.
+
+Temu sledi glavni del programa, to je definicija razreda Calc. Le ta hrani
+celoten sklad in število, ki pove, do kod je sklad napolnjen. Funkcija Init()
+vzpostavi zaèetno stanje, Add pa doda novo število.
+
+Glavna in najobširnejša je funkcija Input, ki kot parameter sprejme vhodno
+vrstico. Ker ja lahko vhodna vrstica polna vodilnih presledkov, najprej le te
+izloèi. Izloèanje vodilnih presledkov je preprosto; kazalec se 'sprehodi' od
+zaèetka niza, do prvega znaka. Od tu dalje se vse skopira v zaèasno vnosno
+vrstico.
+
+Najprej ugotovi, ali je v vrstici zapisano število. V primeru pozitivnega
+odgovora število doda na sklad sicer pa pogleda, èe je prvi znak èrka. V
+primeru pozitivnega odgovora pregleda vse znane ukaze, sicer pa izvede eno
+izmed raèunskih operacij. Razen v primeru ukaza exit vedno vrne 0 (== false),
+ki pomeni, naj se program nadaljuje.
+
+S pomoèjo prebloženega operatorja se objekt zna izpisati.
+
+Glavni program se preprosto vrti v zanki, dokler uporabnik ne vpiše 'exit'.
+
+
+RAZŠIRITVE
+
+Možnosti razširitev so precejšnje. Kot prvo morate izboljšati pomoè in dodati
+veè funkcij. Dodajanje funkcij je zelo preprosto in kot primer si poglejte
+funkciji sin in cos.
+
+Èe pa želite narediti zares uporaben program, pa morate izboljšati izpis
+programa.
+
+                                                Matjaž Prtenjak
+

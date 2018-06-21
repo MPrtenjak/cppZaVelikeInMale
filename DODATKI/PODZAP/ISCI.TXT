@@ -1,0 +1,61 @@
+IŠÈI
+
+Program išèe niz v datoteki. Ker predpostavimo najslabši primer, kjer se
+datoteka nahaja na traku (in torej ni vraèanja), moramo uporabiti algoritem,
+kjer se ni potrebno vraèati po datoteki.
+
+Tak algoritem je opisal (med drugimi) Robert Sedgewick v knjigi Algorithms.
+Ker je to prirejen algoritem, ga v programu nisem komentiral.
+
+NAJPREPROSTEJŠI ALGORITEM
+
+Èe išèemo doloèen niz je ideja algoritma preprosta. Beremo znake in vsakega
+primerjamo s prvim znakom iskanega niza. Èe se znaka ujemata, primerjamo
+naslednjega z drugim ... Veèkrat se zgodi, da se nekaj prvih znakov ujema,
+naslednji znak pa se ne ujema. V tem primeru se vrnemo nazaj na drugi znak in
+poskusimo znova, kot je to prikazano spodaj:
+
+DATOTEKA:   ANANANANAS
+NIZ:        ANANAS
+
+ALGORITEM:
+            ANANANANAS
+            ANANA - vidimo, da se S ne ujema, zato se mramo vrniti na N
+
+            ANANANANAS
+             A - primerjamo z prvo èrko, pa ne gre
+
+            ANANANANAS
+              ANAN   - ....
+
+Kot vidte se moramo vraèati, kar pa po predpostavki ne smemo narediti.
+
+V uporabljenem algoritmu je ideja preprosta a z besedami teško opisljiva. Èe
+vas zanima si ga podrobneje oglejte (je precej boljši in hitrejši od opisanega).
+
+UPORABA
+
+Program je uporaben v skriptah, kjer lahko v odvisnosti od vrnjenega rezultata
+(0 - NAŠEL, 1 - NISEM NAŠEL) ustrezno ukrepate. Ker vas bo v skriptah verjetno
+motil izpis na ekran, ga lahko pretentate tako, da piše na prazno datoteko
+(NULL device):
+
+   isci imena.dat "Matjaž Prtenjak" > NUL
+
+Primer skripte v MS-DOS:
+   @isci isci.cpp bla > NUL
+   @if errorlevel 1 goto NI
+   @if errorlevel 0 goto JE
+
+   :NI
+   @echo Nisem našel
+   @goto END
+
+   :JE
+   @echo Našel sem
+   @goto END
+
+   :END
+
+
+                                                         Matjaž Prtenjak

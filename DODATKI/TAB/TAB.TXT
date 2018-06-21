@@ -1,0 +1,41 @@
+TAB
+
+
+To je kratek programèek, ki zamenja vse tabulatorje s presledki.
+
+
+ZGRADBA
+
+
+Program je tako trivialen, da ne potrebuje posebne razlage. Preden pa ga 
+zaènete uporabljati, bi vas vseeno rad opozoril na dejstvo, da vsi
+operacijski sistemi znaka za novo vrstico ne upoštevajo enako, zato za vaš
+sistem najprej priredite konstanto NewLine!
+
+Mogoèe je zanimiv samo še raèun, ki pove potrebno število presledkov. Kot 
+veste, so tabulatorji v najpreprostejši razlièici mišljeni kot oznaèbe
+kolon. Èe postavimo tabulator "na tri znake", to pomeni, da se bo kurzor 
+ustavljal v 3., 6., 9., 12.... koloni. Da bi pravilno izraèunali presledke,
+moramo torej vedeti v kateri koloni se nahajamo. To nam pove spremenljivka 
+'pos'. Kako pa sedaj s pomoèjo podatka o tabulatorju in poziciji izraèunati
+število presledkov?
+
+Recimo, da se nahajamo v 13 koloni, tabulator pa je v vsaki peti koloni. To
+pomeni, da moramo kurzor postaviti v 15. kolono. Ker moramo tabulator iz teksta
+zbrisati, naša pozicija ni veè 13, temveè 12 (tabulatorja ni veè). Sedaj ko
+poznamo pozicijo, lahko preprosto izraèunamo, koliko mest smo oddaljeni OD
+PREJŠNJEGA TABULATORJA (poz % tab), oz. v našem primeru (12 % 5 = 2). Da 
+pridemo do 5, moramo narediti tri presledke oz. (5 - 2 = 3). Formula je torej;
+
+      Št. presledkov = tabulator - (pozicija % tabulator)
+
+
+RAZŠIRITVE
+
+Program lahko razširite tako, da bo sprejel poljubno postavljene tabulatorje.
+Tabulatorji torej ne bodo postavljeni v vsako n-to kolono, temveè v povsem
+poljubne kolone.
+
+
+                                                Matjaž Prtenjak
+

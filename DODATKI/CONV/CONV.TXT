@@ -1,0 +1,94 @@
+CONV
+
+To je preprost program, ki v datoteki zamenja nekatere znake z drugimi. Kot
+vhod mu morate podati datoteko s podatki o zamenjavah, vhodno datoteko in
+izhodno datoteko.
+
+   DATOTEKA S PODATKI
+
+   V njej so zapisane zamenjave v tej obliki:
+      <kaj> <s èim>
+      <kaj> <s èim>
+      ...
+
+   <kaj> in <s èim> sta celi števili, ki ponazarjata kode znakov. Èe delate
+   z ASCII datotekami in želite vse velike A-je (koda 65) zamenjati z malimi
+   a-ji (koda 96), vse 4 (koda 52) z 8 (koda 56) ... napišete takšnole
+   datoteko:
+
+      PODATKI.dat
+         65 96
+         52 56
+
+   In tako dalje za vsak par.
+
+   Èe imate vhodno datoteko:
+
+      VHOD
+         DANES je bilo 14 stopinj. AAA444.
+
+   morate v ukazno vrstico napisati:
+
+      conv podatki.dat vhod izhod
+
+   in izhodna datoteka bo imela sledeè izgled:
+
+      IZHOD
+         DaNES je bilo 18 stopinj. aaa888.
+
+
+ZGRADBA PROGRAMA
+
+Ideja algoritma je preprosta. Preberi datoteko s podatki in si jih zapomni.
+Beri vhodno datoteko in za vsak znak preveri ali ga moraš zamenjati. Èe ga
+moraš, ga zamenjaj, sicer pa na izhodno datoteko zapiši istega.
+
+To bi bil zelo slab algoritem, saj bi moral za vsak prebrani znak pregledati
+celotno polje zamenjav, kar bi bilo zelo zamudno.
+
+IZBOLJŠAVA
+
+Vse znake lahko damo v tabelo, ki ima 256 znakov (ASCII STANDARD). Èe to tabelo
+napolnimo v narašèujoèem vrstnem redu bo i-ti element vseboval vrednost i. Èe
+pa doloèen element zamenjamo bo recimo i-ti element vseboval vrednost j. Toèno
+to pa je rešitev našega problema.
+
+Naredimo razred, ki bo skrbel za tabelo. Ob inicializaciji tabelo napolnimo v
+narašèujoèem vrstnem redu. Potem beremo datoteko s podatki in samo zamenjujemo
+ustrezne elemente (Èe želimo veliki A(65) zamenjati z malim a(96), moramo v
+tabeli na indeks 65 vpisati vrednost 96).
+
+Beremo vhodno datoteko in na izhodno zapišemo konverzijo preko tabele.
+
+POSEBNOSTI PROGRAMA
+
+V programu beremo vhodno datoteko z metodo get in pišemo z metodo put. S tem
+dosežemo, da se prebere vsak znak datoteke. Èe bi pisali (StrIn >> ch), bi
+operator >> poèistil vse kontrolne znake in izhodna datoteka ne bi bila enaka
+vhodni.
+
+
+DODATKI
+
+Kot primer imate napisanih 6 datotek s podatki. Datoteke služijo konverziji
+med standardi YUASCII, DOS CP852 in WIN CP1250.
+
+iz YUASCII --> DOS CP852  datoteka yu2dos
+iz YUASCII --> WIN CP1250 datoteka yu2win
+
+iz DOS CP852 --> YUASCII    datoteka dos2yu
+iz DOS CP852 --> WIN CP1250 datoteka dos2win
+
+iz WIN CP1250 --> YUASCII   datoteka win2yu
+iz WIN CP1250 --> DOS CP852 datoteka win2dos
+
+Ker so vse datoteke na disketi pisane v standardu WIN CP1250 jih lahko hitro
+spremenite v YU ali DOS standard, da boste videli naše znake:
+
+   conv win2yu conv.txt izhod
+ali
+   conv win2dos conv.txt izhod
+
+
+                                                            Matjaž Prtenjak
+
